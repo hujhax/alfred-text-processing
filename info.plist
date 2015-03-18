@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>89E83845-FC49-496E-AB5B-B76720BEB09E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string>Features ported from AHK</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Peter's AHK Replacement</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ahk</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>osascript /Users/Peter/Dropbox/Current\ Writing/\(utilities\)/Alfred\ Scripts/PetersAlfredScripts.scpt "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># Capitalize
+savedPB=`pbpaste`
+
+echo "xxx" | pbcopy
+
+osascript -e 'tell application "System Events" to keystroke "c" using {command down}'
+osascript -e 'delay .5'
+
+newPB=`pbpaste`
+
+if [ $newPB == "xxx" ]; then
+	osascript -e 'tell app "System Events" to display dialog "nothing selected"'
+else
+	pbpaste | tr '[:upper:]' '[:lower:]' | awk '{for(i=1;i&lt;=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1' | pbcopy
+	osascript -e 'delay .5'
+
+	osascript -e 'tell application "System Events" to keystroke "v" using {command down}'
+fi
+
+osascript -e 'delay .5'
+echo $savedPB | pbcopy
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7F5339CE-AC33-43CA-8DC1-E10B2DBB9F5C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>26</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>7</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>89E83845-FC49-496E-AB5B-B76720BEB09E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/python Hello.py</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</key>
+		<dict>
+			<key>ypos</key>
+			<real>420</real>
+		</dict>
+		<key>7F5339CE-AC33-43CA-8DC1-E10B2DBB9F5C</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>89E83845-FC49-496E-AB5B-B76720BEB09E</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
