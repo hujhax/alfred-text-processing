@@ -41,14 +41,26 @@ def sendPasteKey():
     commandDelay()
 
 
-savedClipboard = getClipboardData()
-sentinel = "§"
-setClipboardData(sentinel)
-sendCopyKey()
-text = getClipboardData()
-if text == sentinel:
+def sendAsterisks():
     setClipboardData("**")
-else:
+    sendPasteKey()
+
+
+def surroundWithAsterisks(text):
     setClipboardData("*" + text + "*")
-sendPasteKey()
-setClipboardData(savedClipboard)
+    sendPasteKey()
+
+
+def processSelectedString(onStringSelection, onEmptySelection):
+    savedClipboard = getClipboardData()
+    sentinel = "§"
+    setClipboardData(sentinel)
+    sendCopyKey()
+    text = getClipboardData()
+    if text == sentinel:
+        onEmptySelection()
+    else:
+        onStringSelection(text)
+    setClipboardData(savedClipboard)
+
+processSelectedString(surroundWithAsterisks, sendAsterisks)
