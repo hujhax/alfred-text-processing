@@ -128,8 +128,13 @@ echo $savedPB | pbcopy
 				<false/>
 				<key>modsmode</key>
 				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>com.parallels.desktop.console</string>
+					<string>com.parallels.winapp.eec9eaa938829d59eb41ca83c00045a7.e63d6996850c49eab1cf4b33468bf44e</string>
+				</array>
 				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<integer>2</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
@@ -144,7 +149,7 @@ echo $savedPB | pbcopy
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>/usr/bin/python Hello.py</string>
+				<string>/usr/bin/python ProcessSelectedString.py</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
