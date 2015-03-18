@@ -28,7 +28,7 @@ def sendCommandKey(key):
 
 
 def commandDelay():
-    return "osascript -e 'delay .5'"
+    os.system("osascript -e 'delay 0'")
 
 
 def sendCopyKey():
