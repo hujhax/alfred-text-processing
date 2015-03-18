@@ -3,6 +3,7 @@
 
 import subprocess
 import os
+from functools import partial
 
 
 def getClipboardData():
@@ -41,14 +42,19 @@ def sendPasteKey():
     commandDelay()
 
 
-def sendAsterisks():
-    setClipboardData("**")
+def outputTags(beginTag, endTag):
+    setClipboardData(beginTag + endTag)
     sendPasteKey()
 
 
-def surroundWithAsterisks(text):
-    setClipboardData("*" + text + "*")
+def surroundWithTags(beginTag, endTag, text):
+    setClipboardData(beginTag + text + endTag)
     sendPasteKey()
+
+
+def handleTags(beginTag, endTag):
+    processSelectedString(partial(surroundWithTags, beginTag, endTag),
+                          partial(outputTags, beginTag, endTag))
 
 
 def processSelectedString(onStringSelection, onEmptySelection):
@@ -63,4 +69,4 @@ def processSelectedString(onStringSelection, onEmptySelection):
         onStringSelection(text)
     setClipboardData(savedClipboard)
 
-processSelectedString(surroundWithAsterisks, sendAsterisks)
+handleTags("*", "*")
