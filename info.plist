@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>89E83845-FC49-496E-AB5B-B76720BEB09E</key>
@@ -30,13 +32,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Peter Rogers</string>
 	<key>description</key>
-	<string>Features ported from AHK</string>
+	<string>Tools for adjusting the selected or proximal text.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Peter's AHK Replacement</string>
+	<string>Text-Processing Hotkeys</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -136,6 +138,6 @@
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>http://peterrogers.info</string>
 </dict>
 </plist>
