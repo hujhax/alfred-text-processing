@@ -117,24 +117,21 @@ echo $savedPB | pbcopy
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>"*" "*"</string>
 				<key>hotkey</key>
-				<integer>26</integer>
+				<integer>28</integer>
 				<key>hotmod</key>
-				<integer>262144</integer>
+				<integer>1048576</integer>
 				<key>hotstring</key>
-				<string>7</string>
+				<string>8</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
 				<integer>0</integer>
-				<key>relatedApps</key>
-				<array>
-					<string>com.parallels.desktop.console</string>
-					<string>com.parallels.winapp.eec9eaa938829d59eb41ca83c00045a7.e63d6996850c49eab1cf4b33468bf44e</string>
-				</array>
 				<key>relatedAppsMode</key>
-				<integer>2</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
@@ -147,9 +144,9 @@ echo $savedPB | pbcopy
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>122</integer>
 				<key>script</key>
-				<string>/usr/bin/python ProcessSelectedString.py "*" "*"</string>
+				<string>/usr/bin/python ProcessSelectedString.py {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
