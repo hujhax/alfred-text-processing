@@ -20,12 +20,18 @@ def setClipboardData(data):
     p.wait()
 
 
-def sendCommandKey(key):
+def sendKeyCore(keyText):
     command1 = "osascript -e 'tell application "
-    command2 = '"System Events" to keystroke "' + key + '"'
-    command3 = " using {command down}'"
+    command2 = '"System Events" to keystroke ' + keyText + "'"
+    os.system(command1 + command2)
 
-    os.system(command1 + command2 + command3)
+
+def sendKey(key):
+    return sendKeyCore('"' + key + '"')
+
+
+def sendCommandKey(key):
+    return sendKeyCore('"' + key + '" using {command down}')
 
 
 def commandDelay():
