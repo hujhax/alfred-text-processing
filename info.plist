@@ -149,7 +149,7 @@ echo $savedPB | pbcopy
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>/usr/bin/python ProcessSelectedString.py</string>
+				<string>/usr/bin/python ProcessSelectedString.py "*" "*"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

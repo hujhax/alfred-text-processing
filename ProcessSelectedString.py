@@ -4,7 +4,7 @@
 import subprocess
 import os
 from functools import partial
-
+import argparse
 
 def getClipboardData():
     p = subprocess.Popen(['pbpaste'], stdout=subprocess.PIPE)
@@ -69,4 +69,17 @@ def processSelectedString(onStringSelection, onEmptySelection):
         onStringSelection(text)
     setClipboardData(savedClipboard)
 
-handleTags("*", "*")
+
+def parseArguments():
+    toolDescription = "Adds prefix/postfix to selected text,"\
+                      " or outputs those tags and allows the"\
+                      " user to type in between them."
+
+    parser = argparse.ArgumentParser(description=toolDescription)
+    parser.add_argument("beginTag", help="The opening tag.")
+    parser.add_argument("endTag", help="The closing tag.")
+    return parser.parse_args()
+
+
+args = parseArguments()
+handleTags(args.beginTag, args.endTag)
