@@ -17,11 +17,11 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</key>
+		<key>B1A80DA2-4BB5-4AE0-BCC4-E0859020AA51</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</string>
+				<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -39,78 +39,6 @@
 	<string>Peter's AHK Replacement</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>ahk</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>osascript /Users/Peter/Dropbox/Current\ Writing/\(utilities\)/Alfred\ Scripts/PetersAlfredScripts.scpt "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string># Capitalize
-savedPB=`pbpaste`
-
-echo "xxx" | pbcopy
-
-osascript -e 'tell application "System Events" to keystroke "c" using {command down}'
-osascript -e 'delay .5'
-
-newPB=`pbpaste`
-
-if [ $newPB == "xxx" ]; then
-	osascript -e 'tell app "System Events" to display dialog "nothing selected"'
-else
-	pbpaste | tr '[:upper:]' '[:lower:]' | awk '{for(i=1;i&lt;=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1' | pbcopy
-	osascript -e 'delay .5'
-
-	osascript -e 'tell application "System Events" to keystroke "v" using {command down}'
-fi
-
-osascript -e 'delay .5'
-echo $savedPB | pbcopy
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7F5339CE-AC33-43CA-8DC1-E10B2DBB9F5C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -194,27 +122,17 @@ echo $savedPB | pbcopy
 		<key>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</key>
 		<dict>
 			<key>ypos</key>
-			<real>420</real>
-		</dict>
-		<key>7F5339CE-AC33-43CA-8DC1-E10B2DBB9F5C</key>
-		<dict>
-			<key>ypos</key>
-			<real>290</real>
+			<real>80</real>
 		</dict>
 		<key>89E83845-FC49-496E-AB5B-B76720BEB09E</key>
 		<dict>
 			<key>ypos</key>
-			<real>340</real>
+			<real>20</real>
 		</dict>
-		<key>9AB02EDB-63F3-4CA8-86EB-581E836FCE1A</key>
+		<key>B1A80DA2-4BB5-4AE0-BCC4-E0859020AA51</key>
 		<dict>
 			<key>ypos</key>
-			<real>170</real>
-		</dict>
-		<key>E7B3F7D3-28CC-4619-8F3C-F99418815B3A</key>
-		<dict>
-			<key>ypos</key>
-			<real>90</real>
+			<real>150</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
