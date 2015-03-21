@@ -51,7 +51,11 @@ def sendPasteKey():
     commandDelay()
 
 
-def processSelectedString(onStringSelection, onEmptySelection):
+def doNothing():
+    pass
+
+
+def processSelectedString(onStringSelection, onEmptySelection=doNothing):
     savedClipboard = getClipboardData()
     sentinel = "§"
     setClipboardData(sentinel)
