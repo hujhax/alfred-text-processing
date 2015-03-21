@@ -76,7 +76,7 @@
 				<key>escaping</key>
 				<integer>122</integer>
 				<key>script</key>
-				<string>/usr/bin/python ProcessSelectedString.py {query}</string>
+				<string>/usr/bin/python TagText.py {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
