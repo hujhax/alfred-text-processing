@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 
 from ProcessSelection import setClipboardData, sendPasteKey, \
-                             processSelectedString
+                             processSelectedString, sendLefts
 import argparse
 
 
@@ -23,6 +23,7 @@ def toggleText(text):
         text = text.lower()
     setClipboardData(text)
     sendPasteKey()
+    sendLefts(len(text), True)
 
 
 def parseArguments():

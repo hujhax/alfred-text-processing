@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 
 from ProcessSelection import setClipboardData, sendPasteKey, \
-                             processSelectedString
+                             processSelectedString, sendLefts
 from functools import partial
 import argparse
 
@@ -10,6 +10,7 @@ import argparse
 def outputTags(beginTag, endTag):
     setClipboardData(beginTag + endTag)
     sendPasteKey()
+    sendLefts(len(endTag))
 
 
 def surroundWithTags(beginTag, endTag, text):

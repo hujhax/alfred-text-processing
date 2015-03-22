@@ -33,8 +33,13 @@ def sendCommandKey(key):
     return sendKeyCore('keystroke "' + key + '" using {command down}')
 
 
-def sendKeyCode(keyCode):
-    return sendKeyCore('key code "' + str(keyCode) + '"')
+def sendLefts(numLefts, shift=False):
+    if shift:
+        keyText = "key code 123 using {shift down}"
+    else:
+        keyText = "key code 123"
+    for _ in xrange(numLefts):
+        sendKeyCore(keyText)
 
 
 def commandDelay():
