@@ -5,6 +5,7 @@ from ProcessSelection import setClipboardData, sendPasteKey, \
                              processSelectedString, sendLefts
 from functools import partial
 import argparse
+import re
 
 
 def outputTags(beginTag, endTag):
@@ -14,7 +15,10 @@ def outputTags(beginTag, endTag):
 
 
 def surroundWithTags(beginTag, endTag, text):
-    setClipboardData(beginTag + text + endTag)
+    trimmer = re.compile("^(\s*)(.*[^\s])(\s*)$")
+    matches = trimmer.match(text)
+    setClipboardData(matches.group(1) + beginTag + matches.group(2)
+                     + endTag + matches.group(3))
     sendPasteKey()
 
 
