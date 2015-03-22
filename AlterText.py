@@ -18,6 +18,20 @@ def hashtagText(text):
     sendPasteKey()
 
 
+def urlShortener(text):
+    from urllib2 import Request, urlopen, URLError
+
+    request = Request('http://is.gd/api.php?longurl=' + text.strip())
+
+    try:
+        response = urlopen(request)
+        shortURL = response.read()
+        setClipboardData(shortURL)
+        sendPasteKey()
+    except URLError:
+        pass
+
+
 def parseArguments():
     toolDescription = "A few functionalities for altering "\
                       "the selected text."
@@ -28,6 +42,8 @@ def parseArguments():
                            help="Replace spaces with hyphens.")
     behaviors.add_argument("--hashtag", action="store_true",
                            help="Convert the string to a hashtag, #likethis.")
+    behaviors.add_argument("--shortenURL", action="store_true",
+                           help="Convert the string to a short URL via is.gd.")
     return parser.parse_args()
 
 
@@ -38,3 +54,5 @@ if args.hyphenate:
     processSelectedString(hyphenateText)
 elif args.hashtag:
     processSelectedString(hashtagText)
+elif args.shortenURL:
+    processSelectedString(urlShortener)
