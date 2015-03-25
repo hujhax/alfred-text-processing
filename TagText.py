@@ -11,7 +11,7 @@ import re
 def outputTags(beginTag, endTag):
     setClipboardData(beginTag + endTag)
     sendPasteKey()
-    sendLefts(len(endTag))
+    sendLefts(len(endTag.decode('utf-8')))
 
 
 def surroundWithTags(beginTag, endTag, text):

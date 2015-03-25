@@ -74,6 +74,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>E360707D-A7EE-4F5B-8A65-020E55F867DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>EF6D8B64-F30A-4A5F-A441-D2A3D7F75ADD</key>
 		<array>
 			<dict>
@@ -115,6 +126,52 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
+				<string>"٭" "٭"</string>
+				<key>hotkey</key>
+				<integer>26</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>7</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E360707D-A7EE-4F5B-8A65-020E55F867DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>114</integer>
+				<key>script</key>
+				<string>/usr/bin/python TagText.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
 				<string>"*" "*"</string>
 				<key>hotkey</key>
 				<integer>28</integer>
@@ -135,23 +192,6 @@
 			<string>89E83845-FC49-496E-AB5B-B76720BEB09E</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>114</integer>
-				<key>script</key>
-				<string>/usr/bin/python TagText.py {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>52CF6306-C7C2-46D1-9771-3CDEAFEA95BC</string>
-			<key>version</key>
-			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -214,6 +254,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>114</integer>
+				<key>script</key>
+				<string>/usr/bin/python AlterText.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2AE18817-823E-4E57-8956-20D3BF3C8CF2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -239,23 +296,6 @@
 			<string>EF6D8B64-F30A-4A5F-A441-D2A3D7F75ADD</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>114</integer>
-				<key>script</key>
-				<string>/usr/bin/python AlterText.py {query}</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>2AE18817-823E-4E57-8956-20D3BF3C8CF2</string>
-			<key>version</key>
-			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -413,42 +453,47 @@
 		<key>696BF0AF-FFD8-4B70-8F2E-C9B8920B2EC9</key>
 		<dict>
 			<key>ypos</key>
-			<real>520</real>
+			<real>620</real>
 		</dict>
 		<key>6BABEFB9-9531-4F07-8F9C-E581F701C90E</key>
 		<dict>
 			<key>ypos</key>
-			<real>620</real>
+			<real>710</real>
 		</dict>
 		<key>89E83845-FC49-496E-AB5B-B76720BEB09E</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>110</real>
 		</dict>
 		<key>A61FBF1B-28B1-4BB8-85B3-E17850684C18</key>
 		<dict>
 			<key>ypos</key>
-			<real>420</real>
+			<real>530</real>
 		</dict>
 		<key>B1A80DA2-4BB5-4AE0-BCC4-E0859020AA51</key>
 		<dict>
 			<key>ypos</key>
-			<real>210</real>
+			<real>320</real>
 		</dict>
 		<key>DBAF63D5-70FE-405D-ABE3-ECF06E2709AA</key>
 		<dict>
 			<key>ypos</key>
-			<real>110</real>
+			<real>210</real>
+		</dict>
+		<key>E360707D-A7EE-4F5B-8A65-020E55F867DE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
 		</dict>
 		<key>EF6D8B64-F30A-4A5F-A441-D2A3D7F75ADD</key>
 		<dict>
 			<key>ypos</key>
-			<real>310</real>
+			<real>420</real>
 		</dict>
 		<key>F558C713-E4A5-4AAC-A0A6-BBC219910EE9</key>
 		<dict>
 			<key>ypos</key>
-			<real>730</real>
+			<real>840</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

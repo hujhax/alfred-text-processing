@@ -1,19 +1,25 @@
 #!/usr/bin/python
-# -*- coding: latin-1 -*-
+# -*- coding: utf-8 -*-
 
 import subprocess
 import os
 
 
 def getClipboardData():
-    p = subprocess.Popen(['pbpaste'], stdout=subprocess.PIPE)
+    env = os.environ.copy()
+    env['LC_CTYPE'] = 'UTF-8'
+
+    p = subprocess.Popen(['pbpaste'], stdout=subprocess.PIPE, env=env)
     p.wait()
     data = p.stdout.read()
     return data
 
 
 def setClipboardData(data):
-    p = subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE)
+    env = os.environ.copy()
+    env['LC_CTYPE'] = 'UTF-8'
+
+    p = subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE, env=env)
     p.stdin.write(data)
     p.stdin.close()
     p.wait()
