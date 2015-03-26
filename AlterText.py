@@ -12,8 +12,9 @@ def hyphenateText(text):
 
 
 def hashtagText(text):
-    textNoSpace = "".join(text.split())
-    hashtag = "#" + textNoSpace.lower()
+    import re
+    textAlphaOnly = re.sub(r'\W+', '', text)
+    hashtag = "#" + textAlphaOnly.lower()
     setClipboardData(hashtag)
     sendPasteKey()
 
